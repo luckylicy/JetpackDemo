@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">篮球计分器</string>
+    <string name="main_team">主队</string>
+    <string name="visiting_team">客队</string>
+    <string name="add_one">+1</string>
+    <string name="add_two">+2</string>
+    <string name="add_three">+3</string>
+
+</resources>

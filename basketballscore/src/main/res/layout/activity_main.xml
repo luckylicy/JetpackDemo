@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="licy.demo.basketballscore.ScoreViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <TextView
+            android:id="@+id/tv_main_team"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:text="@string/main_team"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5" />
+
+
+        <TextView
+            android:id="@+id/tv_visiting_team"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:text="@string/visiting_team"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_main_team"
+            app:layout_constraintStart_toEndOf="@id/tv_main_team"
+            app:layout_constraintWidth_percent="0.5" />
+
+
+        <TextView
+            android:id="@+id/tv_main_team_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@{String.valueOf(data.mainTeam.totalScore)}"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_main_team"
+            app:layout_constraintWidth_percent="0.5" />
+
+
+        <TextView
+            android:id="@+id/tv_visiting_team_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@{String.valueOf(data.visitTeam.totalScore)}"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="48sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_main_team_score"
+            app:layout_constraintStart_toEndOf="@id/tv_main_team"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <Button
+            android:id="@+id/btn_main_add_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:onClick="@{()->data.addMainTeam(1)}"
+            android:text="@string/add_one"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/btn_visit_add_one"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_main_team_score"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <Button
+            android:id="@+id/btn_visit_add_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_blue_light"
+            android:gravity="center"
+            android:onClick="@{()->data.addVisitTeam(1)}"
+            android:text="@string/add_one"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_main_add_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_main_add_one"
+            app:layout_constraintTop_toTopOf="@id/btn_main_add_one"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <Button
+            android:id="@+id/btn_main_add_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:onClick="@{()->data.addMainTeam(2)}"
+            android:text="@string/add_two"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/btn_visit_add_two"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_main_add_one"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <Button
+            android:id="@+id/btn_visit_add_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_blue_light"
+            android:gravity="center"
+            android:onClick="@{()->data.addVisitTeam(2)}"
+            android:text="@string/add_two"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_main_add_two"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_main_add_two"
+            app:layout_constraintTop_toTopOf="@id/btn_main_add_two"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <Button
+            android:id="@+id/btn_main_add_three"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:onClick="@{()->data.addMainTeam(3)}"
+            android:text="@string/add_three"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/btn_visit_add_three"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_main_add_two"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <Button
+            android:id="@+id/btn_visit_add_three"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_blue_light"
+            android:gravity="center"
+            android:onClick="@{()->data.addVisitTeam(3)}"
+            android:text="@string/add_three"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_main_add_three"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_main_add_three"
+            app:layout_constraintTop_toTopOf="@id/btn_main_add_three"
+            app:layout_constraintWidth_percent="0.3" />
+
+
+        <ImageButton
+            android:id="@+id/iv_recovery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:scaleType="center"
+            android:onClick="@{()->data.undo()}"
+            android:src="@drawable/ic_baseline_settings_backup_restore_24"
+            app:layout_constraintEnd_toStartOf="@id/iv_reset"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_main_add_three"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <ImageButton
+            android:id="@+id/iv_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="@{()->data.reset()}"
+            android:src="@drawable/ic_baseline_refresh_24"
+            app:layout_constraintBottom_toBottomOf="@id/iv_recovery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_recovery"
+            app:layout_constraintTop_toTopOf="@id/iv_recovery"
+            app:layout_constraintWidth_percent="0.3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

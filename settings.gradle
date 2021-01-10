@@ -1,2 +1,3 @@
+include ':basketballscore'
 include ':navigation'
 rootProject.name = "JetpackDemo"

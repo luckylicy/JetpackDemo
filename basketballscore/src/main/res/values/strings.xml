@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BasketballScore</string>
+    <string name="main_team">Main Team</string>
+    <string name="visiting_team">Visit Team</string>
+    <string name="add_one">+1</string>
+    <string name="add_two">+2</string>
+    <string name="add_three">+3</string>
+</resources>
